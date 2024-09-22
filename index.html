@@ -84,11 +84,15 @@
         loginBtn.addEventListener("click", () => {
             login.style.display = 'block';
             register.style.display = 'none';
+            loginBtn.classList.add("active");
+            registerBtn.classList.remove("active");
         });
 
         registerBtn.addEventListener("click", () => {
             login.style.display = 'none';
             register.style.display = 'block';
+            registerBtn.classList.add("active");
+            loginBtn.classList.remove("active");
         });
 
         // Registration
@@ -116,7 +120,7 @@
             const storedPassword = localStorage.getItem(email);
             if (storedPassword && storedPassword === password) {
                 alert('Login successful!');
-                window.location.href = 'project_test\quiz.html';
+                window.location.href = 'project_test/quiz.html';
             } else {
                 alert('Invalid login credentials. Or you have to first regirstration.');
             }
